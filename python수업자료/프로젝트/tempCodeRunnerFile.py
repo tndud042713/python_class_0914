@@ -1,0 +1,1 @@
+}\t".format("name",kor,eng,mat,sum,avg))

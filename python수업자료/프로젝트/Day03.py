@@ -59,11 +59,45 @@
 # print("3과목의 평균은 {:.2f}점 입니다".format(avg))
 
 # 문제4
-su=100
-num ='100'
-fit = 1.111
+# su=100
+# num ='100'
+# fit = 1.111
 
-print(su+int(num))
-print(su+fit)
-print(int(su)+fit)
-print(str(su)+num)
+# print(su+int(num))
+# print(su+fit)
+# print(int(su)+fit)
+# print(str(su)+num)
+
+# name=input("학생이름 : ")
+# kor=int(input("국어점수 : "))
+# eng=int(input("영어점수 : "))
+# mat=int(input("수학점수 : "))
+# sum=kor+eng+mat
+# avg=float(sum/3)
+# print("=====================================")
+# print("이름\t국어\t영어\t수학\t합계\t평균\t")
+# print("{}\t{}\t{}\t{}\t{}\t{:.2f}\t".format(name,kor,eng,mat,sum,avg))
+
+# pdf 문제
+
+# name = input("이름을 입력하시오 : ")
+# age = input("나이를 입력하시오 : ")
+
+# print(f"{name}님의 나이는{int(age)}세 입니다.")
+
+# num1= int(input("첫번째 숫자를 입력하시오"))
+# num2= int(input("두번째 숫자를 입력하시오"))
+
+# print("각 숫자들의 사칙연산 결과는")
+# print("{} + {} = {}".format(num1,num2,num1+num2))
+# print("{} - {} = {}".format(num1,num2,num1-num2))
+# print("{} * {} = {}".format(num1,num2,num1*num2))
+# print("{} / {} = {}".format(num1,num2,num1/num2))
+
+name = input("이름을 입력하시오 : ")
+h=float(input("키를 입력하시오 : "))
+w=float(input("체중을 입력하시오 : "))
+std=(h-100)*0.9
+bmi=(w/std)*100
+print("{}님의 비만도는 {:.2f}%입니다.".format(name,bmi))
+
