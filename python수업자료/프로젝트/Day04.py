@@ -70,4 +70,27 @@ import turtle as t
 # print(A<=B)
 
 # 예제.4
+# print(0 and 0," : ",False and False)
+# print(1 and 0," : ",True and False)
+# print(0 and 1," : ",False and True)
+# print(1 and 1," : ",True and True)
+# print("not : ",not 0," : ",not False)
+# print("not : ",not 1," : ",not True)
+# print(0 or 0," : ",False or False)
+# print(1 or 0," : ",True or False)
+# print(0 or 1," : ",False or True)
+# print(1 or 1," : ",True or True)
+# print("not : ",not(0 or 0)," : ",not(False or False))
+# print("not : ",not(1 or 1)," : ",not(True or True))
 
+# 예제.5
+# print(1 in (1,2,3))
+# print(1 not in (1,2,3))
+# print(4 in (1,2,3))
+# print(4 not in (1,2,3))
+
+# 예제.6
+# num1 = 1
+# num2 = "1"
+# print(type(num1) is type(num2))
+# print(type(num1) is not type(num2))
