@@ -83,9 +83,9 @@ while i<10:
         continue
     j=1
     while j<10:
-        print("{} x {} = {}".format(i,j,i*j))
-        j+=1
         if j>i:
-            break    
+            break
+        print("{} x {} = {}".format(i,j,i*j))
+        j+=1  
     print()
     

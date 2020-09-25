@@ -106,7 +106,7 @@ print("다음 문장")
 
 i=1
 while i<10:
-    i+=1
+    
     if i%2 != 0:
         continue
     j=1
@@ -116,4 +116,4 @@ while i<10:
         print("{}x{}={}".format(i, j, i*j))
         j+=1
     print()
-
+    i+=1
