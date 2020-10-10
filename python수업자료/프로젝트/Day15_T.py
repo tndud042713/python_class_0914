@@ -31,16 +31,18 @@ while flag:
         print("프로그램을 종료 합니다.")
     else:
         print("번호를 다시 선택하세요!")
-    os.system("pause")
-    os.system("cls")
-
+    os.system("pause") #커멘드창이 안 닫히게 하는 코드이다
+    os.system("cls") # 콘솔창을 지우고 깔끔하게 쓰고싶을 때 사용하는 코드이다
+'''
+'''
 [Quiz.1] : 주소 등록 프로그램 제작
 1.주소 등록
 2.주소 수정
 3.주소 목록
 4.주소 검색
 5.프로그램 종료
-
+'''
+'''
 import os
 addr = {}
 flag = True
@@ -81,7 +83,8 @@ while flag:
         print("번호를 다시 선택하세요!")
     os.system("pause")
     os.system("cls")
-
+'''
+'''
 # [종합 예제.2] : 일정 등록 프로그램
 import copy, os
 info={}; data=[]; data2=[]
@@ -114,7 +117,8 @@ while True:
         print("번호를 다시 선택하세요.")
     os.system("pause")
     os.system("cls")
-
+'''
+'''
 [ Quiz.2 ]: 학생의 인적 사항 등록 후 검색 하는 프로그램을 만드시오 
 (학번, 이름, 주소, 등급(A,B,C,D,E,F)
 dic -> { 1-123 : {학번 : 1-123, 이름 : 홍길동, 주소 : 경기도, 등급 : A}}
@@ -124,9 +128,9 @@ dic -> { 1-123 : {학번 : 1-123, 이름 : 홍길동, 주소 : 경기도, 등급
 4.학생 삭제
 5.전체 학생 목록
 6.종료
-
-
 '''
+
+
 
 
 

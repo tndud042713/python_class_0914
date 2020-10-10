@@ -81,7 +81,8 @@ while wh:
 
     os.system("pause")
     os.system("cls")
-
+'''
+'''
 # [예제.1]
 Str = "String Indexing"
 print(Str[0])
@@ -113,7 +114,8 @@ Str = Str.title()
 print(Str)
 Str = Str.swapcase()
 print(Str)
-
+'''
+'''
 # [예제.3]
 st = "Have a nice day"
 print(st)
@@ -126,7 +128,8 @@ for i in st:
     if i == 'a':
         cnt_a += 1
 print(cnt_a)
-
+'''
+'''
 # [예제.4]
 st = "Have a nice day"
 print(st)
@@ -134,13 +137,15 @@ print(st.find("day"))
 print(st.find("dak"))
 print(st.index("day"))
 print(st.index("dak"))
-
+'''
+'''
 st = "Have a nice day"
 print(st.find('a'))
 print(st.find('a',2))
 print(st.find('a',6))
 print(st.find('a',14))
-
+'''
+'''
 [ Quiz ] : List 정의 하여 첨자 위치 저장
 a의 총 개수와 첨자의 위치를 출력 하시오
 st = 'Have a nice day Have a nice day Have a nice day'
@@ -148,7 +153,8 @@ st = 'Have a nice day Have a nice day Have a nice day'
 [ 출력 결과 ]
 a 개수 : 9
 첨자 : [1, 5, 13, 17, 21, 29, 33, 37, 45]
-
+'''
+'''
 st = 'Have a nice day Have a nice day Have a nice day'
 cnt = 0
 ls = []
@@ -159,7 +165,8 @@ for i in st:
         cnt+=1
 print("a 개수: ",st.count('a'))
 print("첨자: ",ls)
-
+'''
+'''
 # [예제.5]
 st = " 파이썬 "
 print("{}{}{}".format("*",st,"*"))
@@ -197,7 +204,7 @@ st = """김개똥 -2017년 03월 24일
 김개똥 :1999년 03월 24일
 홍길동구리 :1999년 04월 02일
 선우선녀 :1999년 05월14일
-
+'''
 st = """김개똥 -2017년 03월 24일
 홍길동구리 -2015년 04월 02일
 선우선녀 -2018년 05월14일"""
@@ -205,7 +212,7 @@ st = """김개똥 -2017년 03월 24일
 st = st.replace('-',":")
 i = 0
 for k in range(st.count(":")):
-    i = st.find(":", i + 1)
+    i = st.find(":", i+1)
     st = st.replace(st[i+1:i+5],"1999")
 print(st)
-'''
+
