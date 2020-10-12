@@ -132,7 +132,7 @@ sum = 0
 def display():
     sumFunc()
     print("10까지의 합 : ",sum)
-def sumFunc(num):
+def sumFunc():
     global sum
     for i in range(num+1):
         sum+=i
