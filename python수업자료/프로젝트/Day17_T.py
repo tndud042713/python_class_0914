@@ -5,7 +5,8 @@ print(st)
 print(st.split())
 lst = st.split()
 print(lst,type(lst))
-
+'''
+'''
 # [예제.2]
 st = "하나:둘:셋"
 print(st.split(":"))
@@ -17,12 +18,14 @@ st = """하나:둘:셋
 하나:둘:셋"""
 print(st.splitlines())
 
+
 # [예제.3]
 st = "123"
 print('%'.join(st))
 lst = ["안녕하세요", "반갑습니다", "또만나요"]
 print("\n".join(lst))
 print(" ".join(lst))
+
 
 # [문제.1]
 user = input("이름과 나이를 입력하세요: ")
@@ -31,6 +34,7 @@ user = input("이름과 나이를 입력하세요: ")
 
 name, age = user.split()
 print("이름:{}, 나이:{}".format(name,age))
+
 
 # [문제.2]
 ex = input("수식입력(EX:5 * 5): ")
@@ -136,7 +140,7 @@ def sumFunc(num) :
         sum+=i
     return sum
 display()
-
+'''
 num = 10
 sum = 0
 def display():
@@ -147,6 +151,6 @@ def sumFunc():
     for i in range(num+1):
         sum+=i
 display()
-'''
+
 
 
