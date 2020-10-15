@@ -1,0 +1,225 @@
+[ 예제.1 ]
+print(ord("안"))
+print(ord("녕"))
+print(ord("1"))
+print(ord("2"))
+print(ord("a"))
+print(chr(50504))
+print(chr(45397))
+print(chr(49))
+print(chr(50))
+print(chr(97))
+# ord() 함수 : 문자의 고유한 숫자를 표시
+# chr() 함수 : 숫자에 해당하는 문자를 표시
+
+[ 예제.2 ]
+readStr,outStr="",""
+secu=100
+choice=input("1.파일 저장 2.파일 불러오기 : ")
+fileName = input("파일명을 입력하세요 : ")
+if choice =='1':
+	content = input("파일에 저장할 내용 입력 : ")
+	outFile = open(fileName,'w',encoding='utf-8')
+	chNum=ord(content)
+	chNum=chNum+secu
+	content = chr(chNum)
+	outFile.write(content)
+	outFile.close()
+elif choice =='2':
+	readFile=open(fileName,'r',encoding='utf-8')
+	readStr = readFile.read()
+	chNum = ord(readStr)
+	chNum = chNum-secu
+	readStr=chr(chNum)
+	print("파일에서 가져온 값 : ",readStr)
+	readFile.close()
+
+# 파일 저장의 경우 단일 문자 값 한 개를 입력 받아 숫자 형식으로 변환 후 secu 변수에 설정 된 값과 덧셈을 진행
+# 덧셈이 완료 된 값을 다시 문자값으로 변환하여 파일에 내용으로 저장한다.
+# 출력의 경우 파일에 저장 된 값을 다시 불러와 숫자 형식으로 변환 후 secu 변수에 설정 된 값과 뺄셈을 진행
+# 뺄셈을 진행 한 후 다시 문자값으로 변환하여 내용을 출력한다.
+# chr , ord 함수의 경우 Unicode Encoding 형식이므로, 반드시 파일을 Open 할 때에는 encoding 방식을 "UTF-8" 형식으로 지정해야한다.
+# 기본 값인 CP949 방식으로 파일을 Open 할 경우 상호간의 Type이 일치하지 않아 Error가 발생하게 된다.
+
+[ Quiz ] 
+1. 위 예제를 이용하여 문자열을 암호화 시켜주세요.
+2. 위의 내용을 토대로 입력값에 따라 암호화 방식을 변경해주세요.
+- 입력값이 숫자일 경우 : +10
+- 입력값이 알파벳일 경우 : +60
+- 입력값이 그 외 : +130
+
+[ Quiz.1 ]
+readStr,outStr,saveStr="","",""
+i=0
+secu=100
+suls=[]
+choice=input("1.파일 저장 2.파일 불러오기 : ")
+fileName = input("입력 파일명을 입력하세요 : ")
+
+if choice =='1':
+	content = input("파일에 저장할 내용 입력 : ")
+	outFile = open(fileName,'w',encoding='utf-8')
+	for i in range(0,len(content)):
+		suls.append(ord(content[i]))
+		suls[i]=suls[i]+secu
+		ch2=chr(suls[i])
+		outStr=outStr+ch2
+	outFile.write(outStr)
+	outFile.close()
+	
+elif choice =='2':
+	readFile=open(fileName,'r',encoding='utf-8')
+	readStr = readFile.read()
+	for i in range(0,len(readStr)):
+		suls.append(ord(readStr[i]))
+		suls[i] = suls[i]-secu
+		ch2=chr(suls[i])
+		saveStr=saveStr+ch2
+	print("파일에서 가져온 값 : ",saveStr)
+	readFile.close()
+
+
+[ Quiz.2 ] 
+readStr,outStr,saveStr="","",""
+i=0
+secu=0
+suls=[]
+choice=input("1.파일 저장 2.파일 불러오기 : ")
+fileName = input("입력 파일명을 입력하세요 : ")
+
+if choice =='1':
+	content = input("파일에 저장할 내용 입력 : ")
+	outFile = open(fileName,'w',encoding='utf-8')
+	for i in range(0,len(content)):
+		if content[i] >= 'a' and content[i] <='z' and content[i] >= 'A' and content[i] <='Z':
+			secu = 60
+		elif content[i] >= '0' and content[i] <='9':
+			secu = 10
+		else:
+			secu = 130
+		suls.append(ord(content[i]))
+		suls[i]=suls[i]+secu
+		ch2=chr(suls[i])
+		outStr=outStr+ch2
+	outFile.write(outStr)
+	outFile.close()
+	
+elif choice =='2':
+	readFile=open(fileName,'r',encoding='utf-8')
+	readStr = readFile.read()
+	for i in range(0,len(readStr)):
+		num=ord(readStr[i])
+		if chr(num-10) >= '0' and chr(num-10) <='9':
+			secu = 10
+		elif chr(num-60) >= 'a' and chr(num-60) <='z' and chr(num-60) >= 'A' and chr(num-60) <='Z':
+			secu = 60
+		else:
+			secu = 130
+		# 저장 된 데이터의 고유값이 60이나 130보다 작을 경우 에러가 발생 하므로, 숫자값을 먼저 검사
+		# 반드시 작은 단위에 값부터 검사를 진행해야 한다.
+		suls.append(ord(readStr[i]))
+		suls[i] = suls[i]-secu
+		ch2=chr(suls[i])
+		saveStr=saveStr+ch2
+	print("파일에서 가져온 값 : ",saveStr)
+	readFile.close()
+
+
+
+[ 회원가입 프로그램 만들기 ]
+- C 드라이브 하위에 DB폴더를 생성 후 회원ID별 텍스트 문서를 생성하여 저장
+- 회원 정보는 : 이름, 나이, 주소
+- 종료의 경우, sys 모듈을 호출하여 sys.exit() 함수를 사용
+
+1.회원가입
+2.회원정보 보기
+3.회원정보 수정
+4.종료 
+
+[ Quiz.1 ]
+import os
+import sys
+
+def check(idUser):
+	return os.path.exists(path+idUser+".txt")
+	
+def fileInput(idUser,name,age,addr):
+	file = open(path+idUser+".txt",'w')
+	file.write("이름 :"+name)
+	file.write("\n나이 :"+age)
+	file.write("\n주소 :"+addr)
+	file.close()
+	
+def fileOutput(idUser,a=1):
+	file = open(path+idUser+".txt",'r')
+	if a == 1: 
+		s = file.read()
+	else: 
+		s = file.readlines()
+	file.close()
+	return s
+	
+def disply():
+	idUser,name,addr,age='','','',''
+	saveList=["","",""]
+	while True:
+		print("1.회원가입")
+		print("2.회원보기")
+		print("3.회원수정")
+		print("4.종료")
+		num = input(">>> ")
+		if num == '1':
+			idUser = input("등록할 id 입력 : ")
+			if check(idUser) != True:
+				name = input("이름 입력 : ")
+				age = input("나이 입력 : ")
+				addr = input("주소 입력 : ")
+				fileInput(idUser,name,age,addr)
+				print("~~~~등록 되었습니다~~~~")
+			else:
+				print("존재하는 id 입니다")
+				
+		elif num == '2':
+			idUser = input("찾고자하는 id 입력 : ")
+			if check(idUser):
+				fileStr = fileOutput(idUser)
+				print("====회원 정보=====")
+				print(fileStr)
+			else: 
+				print("====찾는 회원 없습니다====")
+				
+		elif num == '3':
+			idUser = input("수정할 id 입력 : ")
+			if check(idUser):
+				fileStr = fileOutput(idUser,2)
+				for i,s in enumerate(fileStr):
+					saveList[i]=s
+					print(i+1,":",s)
+				sName = saveList[0].split(':') #구분하여 값넣기
+				listName=sName[1].splitlines() #엔터값(\n\)빼기
+				sAge = saveList[1].split(':')
+				listAge=sAge[1].splitlines()
+				sAddr = saveList[2].split(':')
+				listAddr=sAddr[1].splitlines()
+				name = listName[0] #엔터값 뺀 리스트의 값 str에 대입
+				age = listAge[0]
+				addr = listAddr[0]
+				num = input("선택 : ")
+				if num == '1':
+					name = input("변경할 이름 : ")
+				elif num =='2':
+					age = input("변경할 나이 : ")
+				elif num =='3':
+					addr = input("변경할 주소 : ")
+				fileInput(idUser,name,age,addr)
+				print('~~~변경 되었습니다~~~')
+			else: 
+				print("====찾는 회원이 없습니다====")
+				
+		elif num == '4': 
+			print("프로그램 종료 합니다")
+			sys.exit()
+			
+path = "c:\\DB\\"
+
+disply()
